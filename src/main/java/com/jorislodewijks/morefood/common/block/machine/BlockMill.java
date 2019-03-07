@@ -64,12 +64,9 @@ public class BlockMill extends Block {
 	
 	@Override
 	public boolean onBlockActivated(IBlockState state, World worldIn, BlockPos pos, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-		LOGGER.info("test1");
 		if(!worldIn.isRemote() && player instanceof EntityPlayerMP) {
-			LOGGER.info("test2");
 			TileEntity tileentity = worldIn.getTileEntity(pos);
 			if (tileentity instanceof TileEntityMill) {
-				LOGGER.info("test3");
 				NetworkHooks.openGui((EntityPlayerMP)player, new InteractionObjectMill((TileEntityMill)tileentity), (buffer) -> {
 					buffer.writeBlockPos(pos);
 				});
@@ -105,7 +102,7 @@ public class BlockMill extends Block {
 	}
 	
 	@Override
-	public boolean hasTileEntity() {
+	public boolean hasTileEntity( IBlockState state ) {
 		return true;
 	}
 	

@@ -3,6 +3,7 @@ package com.jorislodewijks.morefood.common.tileentity.machine;
 import javax.annotation.Nullable;
 
 import com.jorislodewijks.morefood.common.tileentity.ModTileEntities;
+import com.jorislodewijks.morefood.core.Reference;
 import com.jorislodewijks.morefood.core.util.NBTHelper;
 
 import net.minecraft.block.state.IBlockState;
@@ -14,7 +15,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityMill extends TileEntity implements ITickable {
@@ -91,7 +91,7 @@ public class TileEntityMill extends TileEntity implements ITickable {
 	}
 	
 	public ITextComponent getName() {
-		return (ITextComponent)(this.customName != null ? this.customName : new TextComponentTranslation("container.mill"));
+		return (ITextComponent)(this.customName != null ? this.customName : "block." + Reference.MOD_ID + ".container.mill");
 	}
 	
 	public boolean hasCustomName() {

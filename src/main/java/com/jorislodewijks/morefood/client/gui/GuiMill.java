@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiMill extends GuiContainer {
 
-	private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID + ":textures/gui/mill_gui.png");
+	private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/mill_gui.png");
 	private final InventoryPlayer player;
 	private final TileEntityMill tileentity;
 	
@@ -33,7 +33,7 @@ public class GuiMill extends GuiContainer {
 		String tileName = this.tileentity.getName().getUnformattedComponentText();
 		String test = Integer.toString(this.tileentity.getField(0));
 		this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName) / 2) + 3, 8, 4210752);
-		this.fontRenderer.drawString(/*this.player.getDisplayName().getUnformattedText()*/ "CurrentMillTime: " + test, 122, this.ySize - 96 + 2, 4210752);
+		this.fontRenderer.drawString(this.player.getDisplayName().getUnformattedComponentText() /*"CurrentMillTime: " + test*/, 122, this.ySize - 96 + 2, 4210752);
 	}
 	
 	@Override
