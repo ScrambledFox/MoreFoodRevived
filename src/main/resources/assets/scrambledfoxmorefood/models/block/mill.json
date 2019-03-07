@@ -1,0 +1,12 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "particle": "scrambledfoxmorefood:block/mill_side",
+        "up": "scrambledfoxmorefood:block/mill_side", 
+        "down": "scrambledfoxmorefood:block/mill_side",
+        "north": "scrambledfoxmorefood:block/mill_front_off",
+        "east": "scrambledfoxmorefood:block/mill_side",
+        "south": "scrambledfoxmorefood:block/mill_side",
+        "west": "scrambledfoxmorefood:block/mill_side"
+    }
+}

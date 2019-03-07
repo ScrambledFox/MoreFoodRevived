@@ -16,17 +16,23 @@ public class ModItems {
 	
 	
 	// Items
-	public static final Item salt = new Item(defaultItemProperties).setRegistryName(location("salt"));
-	public static final Item flour = new Item(defaultItemProperties).setRegistryName(location("flour"));
+	public static Item salt = new Item(defaultItemProperties).setRegistryName(location("salt"));
+	public static Item flour = new Item(defaultItemProperties).setRegistryName(location("flour"));
+	
+	public static Item millstone = new Item(defaultItemProperties).setRegistryName(location("millstone"));
 	
 	
 	// Item Blocks
-	public static final Item salt_ore = new ItemBlock(ModBlocks.salt_ore, defaultItemProperties).setRegistryName(ModBlocks.salt_ore.getRegistryName());
+	public static Item mill = new ItemBlock(ModBlocks.mill, defaultItemProperties).setRegistryName(ModBlocks.mill.getRegistryName());
+	
+	public static Item salt_ore = new ItemBlock(ModBlocks.salt_ore, defaultItemProperties).setRegistryName(ModBlocks.salt_ore.getRegistryName());
 	
 	
 	public static void register(final RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll( salt, flour );
+		event.getRegistry().registerAll( millstone );
 		
+		event.getRegistry().registerAll( mill );
 		event.getRegistry().registerAll( salt_ore );
 	}
 	

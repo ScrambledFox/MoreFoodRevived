@@ -1,0 +1,9 @@
+{
+  "type": "scrambledfoxmorefood:milling",
+  "ingredient": {
+    "item": "minecraft:wheat"
+  },
+  "result": "scrambledfoxmorefood:flour",
+  "experience": 0.1,
+  "milltime": 100
+}

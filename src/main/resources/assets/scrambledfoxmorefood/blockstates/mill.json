@@ -1,0 +1,13 @@
+{
+    "variants": 
+    {
+        "enabled=false,facing=north": { "model": "scrambledfoxmorefood:block/mill" },
+        "enabled=false,facing=east": { "model": "scrambledfoxmorefood:block/mill", "y": 90 },
+        "enabled=false,facing=south": { "model": "scrambledfoxmorefood:block/mill", "y": 180 },
+        "enabled=false,facing=west": { "model": "scrambledfoxmorefood:block/mill", "y": 270 },
+        "enabled=true,facing=north": { "model": "scrambledfoxmorefood:block/active_mill" },
+        "enabled=true,facing=east": { "model": "scrambledfoxmorefood:block/active_mill", "y": 90 },
+        "enabled=true,facing=south": { "model": "scrambledfoxmorefood:block/active_mill", "y": 180 },
+        "enabled=true,facing=west": { "model": "scrambledfoxmorefood:block/active_mill", "y":270  }
+    }
+}

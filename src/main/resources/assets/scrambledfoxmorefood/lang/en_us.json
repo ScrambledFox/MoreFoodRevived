@@ -2,5 +2,12 @@
 	"item.scrambledfoxmorefood.salt":"Salt",
 	"item.scrambledfoxmorefood.flour":"Flour",
 	
-	"block.scrambledfoxmorefood.salt_ore":"Salt Ore"
+	"item.scrambledfoxmorefood.millstone":"Millstone",
+	
+	
+	"block.scrambledfoxmorefood.salt_ore":"Salt Ore",
+	"block.scrambledfoxmorefood.mill":"Mill",
+	
+	
+	"container.scrambledfoxmorefood.mill":"Mill"
 }

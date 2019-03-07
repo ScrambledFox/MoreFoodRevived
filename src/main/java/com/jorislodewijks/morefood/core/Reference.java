@@ -9,4 +9,6 @@ public class Reference {
 	public static final String CLIENT_PROXY = "";
 	public static final String COMMON_PROXY = "";
 	
+	public static final String GUI_MILL = ":" + "mill_gui";
+	
 }
