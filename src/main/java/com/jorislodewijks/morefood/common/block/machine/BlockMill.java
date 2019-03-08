@@ -1,6 +1,7 @@
 package com.jorislodewijks.morefood.common.block.machine;
 
 import com.jorislodewijks.morefood.client.gui.InteractionObjectMill;
+import com.jorislodewijks.morefood.common.block.ModBlocks;
 import com.jorislodewijks.morefood.common.tileentity.machine.TileEntityMill;
 
 import net.minecraft.block.Block;
@@ -99,6 +100,18 @@ public class BlockMill extends Block {
 		}
 		
 		super.onBlockHarvested(worldIn, pos, state, player);
+	}
+	
+	public static void setState(boolean enabled, World world, BlockPos pos) {
+		IBlockState state = world.getBlockState(pos);
+		TileEntity tileentity = world.getTileEntity(pos);
+	
+		world.setBlockState(pos, ModBlocks.MILL.getDefaultState().with(FACING, state.get(FACING)).with(ENABLED, enabled));
+		
+		if (tileentity != null) {
+			tileentity.validate();
+			world.setTileEntity(pos, tileentity);
+		}
 	}
 	
 	@Override

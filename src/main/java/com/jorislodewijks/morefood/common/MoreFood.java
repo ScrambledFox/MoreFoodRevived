@@ -8,6 +8,7 @@ import com.jorislodewijks.morefood.common.block.ModBlocks;
 import com.jorislodewijks.morefood.common.item.ModItems;
 import com.jorislodewijks.morefood.common.tileentity.ModTileEntities;
 import com.jorislodewijks.morefood.common.tileentity.machine.TileEntityMill;
+import com.jorislodewijks.morefood.common.world.generation.ModSaltOreGeneration;
 import com.jorislodewijks.morefood.core.Reference;
 
 import net.minecraft.block.Block;
@@ -36,16 +37,16 @@ public class MoreFood {
 	public static MoreFood instance;
 	private static final Logger LOGGER = LogManager.getLogger(Reference.MOD_ID);
 
-	public static ItemGroup creativeTab;
+	public static ItemGroup CREATIVE_TAB;
 	
 	
 	public MoreFood() {
 		instance = this;
 		
-		creativeTab = new ItemGroup("more_food") {
+		CREATIVE_TAB = new ItemGroup("more_food") {
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(ModItems.flour);
+				return new ItemStack(ModItems.FLOUR);
 			}
 		};
 		
@@ -71,11 +72,11 @@ public class MoreFood {
 	}
 	
 	private void setup (final FMLCommonSetupEvent event) {
-		LOGGER.info("Setup method running..");
+		ModSaltOreGeneration.Init();
 	}
 	
 	private void clientRegistries (final FMLClientSetupEvent event) {
-		LOGGER.info("Client Registries method running..");
+		
 	}
 	
 	

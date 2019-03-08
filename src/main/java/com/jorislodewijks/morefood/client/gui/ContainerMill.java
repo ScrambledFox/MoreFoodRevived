@@ -1,5 +1,7 @@
 package com.jorislodewijks.morefood.client.gui;
 
+import java.util.Map.Entry;
+
 import com.jorislodewijks.morefood.common.crafting.MillRecipes;
 import com.jorislodewijks.morefood.common.item.ModItems;
 import com.jorislodewijks.morefood.common.tileentity.machine.TileEntityMill;
@@ -59,8 +61,7 @@ public class ContainerMill extends Container {
 	
 	@Override
 	public boolean canInteractWith(EntityPlayer playerIn) {
-		return true;
-		//return this.tileentityMill.isUsableByPlayer(playerIn);
+		return this.tileentityMill.isUsableByPlayer(playerIn);
 	}
 	
 	@Override
@@ -73,33 +74,54 @@ public class ContainerMill extends Container {
 			stack = stack1.copy();
 			
 			if(index == 2) {
-				if(!this.mergeItemStack(stack1, 3, 39, true)) return ItemStack.EMPTY;
+				if(!this.mergeItemStack(stack1, 3, 39, true)) {
+					return ItemStack.EMPTY;
+				}
+				
 				slot.onSlotChange(stack1, stack);
 			}  else if(index != 1 && index != 0)  {
-				
-				if(!MillRecipes.getInstance().getMillingResult(stack1).isEmpty()) {
-					if(!this.mergeItemStack(stack1, 1, 2, false)) return ItemStack.EMPTY;
+				if(canMill(stack1)) {
+					if(!this.mergeItemStack(stack1, 0, 1, false)) {
+						return ItemStack.EMPTY;
+					} 
+				} else if(stack1.getItem().equals(ModItems.MILLSTONE)) {
+					if (!this.mergeItemStack(stack1, 0, 1, false)) { 
+						return ItemStack.EMPTY;
+					}
+				} else if(index >= 3 && index < 30) {
+					if (!this.mergeItemStack(stack1, 30, 39, false)) {
+						return ItemStack.EMPTY;
+					}
+				} else if(index >= 30 && index < 39 && !this.mergeItemStack(stack1, 3, 30, false)) {
+					return ItemStack.EMPTY;
 				}
-				if(stack1.getItem().equals(ModItems.millstone)) {
-					if (!this.mergeItemStack(stack1, 0, 1, false)) return ItemStack.EMPTY;
-				}
-			} 
-			else if(!this.mergeItemStack(stack1, 4, 39, false))  {
+			}  else if(!this.mergeItemStack(stack1, 3, 39, false))  {
 				return ItemStack.EMPTY;
 			}
+			
 			if(stack1.isEmpty()) {
 				slot.putStack(ItemStack.EMPTY);
 			}
 			else {
 				slot.onSlotChanged();
-
 			}
 			
-			if(stack1.getCount() == stack.getCount()) return ItemStack.EMPTY;
+			if(stack1.getCount() == stack.getCount()) {
+				return ItemStack.EMPTY;
+			} 
 			
 			slot.onTake(playerIn, stack1);
 		}
+		
 		return stack;
+	}
+	
+	private boolean canMill(ItemStack stack) {
+		if ( MillRecipes.getInstance().getMillingResult(stack).isEmpty() ) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 	
 }

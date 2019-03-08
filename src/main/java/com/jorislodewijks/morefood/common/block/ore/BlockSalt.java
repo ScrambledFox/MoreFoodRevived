@@ -26,7 +26,7 @@ public class BlockSalt extends Block {
 	
 	@Override
 	public void getDrops(IBlockState state, NonNullList<ItemStack> drops, World world, BlockPos pos, int fortune) {
-		drops.add(new ItemStack(ModItems.salt, RANDOM.nextInt(4)+2));
+		drops.add(new ItemStack(ModItems.SALT, RANDOM.nextInt(4)+2));
 	}
 	
 	@Override
@@ -41,7 +41,7 @@ public class BlockSalt extends Block {
 	
 	@Override
 	public void animateTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
-		if (rand.nextInt(16) == 0) {
+		if (rand.nextInt(4) == 0) {
 			BlockPos blockPos = pos.down();
 			Material material = worldIn.getBlockState(blockPos).getMaterial();
 			if (worldIn.isAirBlock(blockPos) || worldIn.getBlockState(blockPos).getBlock() == Blocks.FIRE || material.isLiquid() || material.isReplaceable()) {

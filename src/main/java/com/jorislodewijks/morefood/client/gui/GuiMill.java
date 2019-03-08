@@ -30,7 +30,7 @@ public class GuiMill extends GuiContainer {
 	
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String tileName = this.tileentity.getName().getUnformattedComponentText();
+		String tileName = this.tileentity.getName().getFormattedText();
 		String test = Integer.toString(this.tileentity.getField(0));
 		this.fontRenderer.drawString(tileName, (this.xSize / 2 - this.fontRenderer.getStringWidth(tileName) / 2) + 3, 8, 4210752);
 		this.fontRenderer.drawString(this.player.getDisplayName().getUnformattedComponentText() /*"CurrentMillTime: " + test*/, 122, this.ySize - 96 + 2, 4210752);

@@ -1,0 +1,36 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "scrambledfoxmorefood:flour"
+        },
+		{
+            "item": "scrambledfoxmorefood:flour"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ],
+    "result": {
+        "item": "minecraft:apple",
+        "count": 8
+    }
+}
