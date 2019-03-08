@@ -1,0 +1,9 @@
+{
+    "type": "smelting",
+    "ingredient": {
+            "item": "scrambledfoxmorefood:salted_potato"
+     },
+    "result": "scrambledfoxmorefood:salted_baked_potato",
+    "experience": 0.2,
+    "cookingtime": 200
+}

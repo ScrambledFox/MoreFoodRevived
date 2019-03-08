@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "scrambledfoxmorefood:salt"
+        },
+        {
+            "item": "minecraft:tropical_fish"
+        }
+    ],
+    "result": {
+        "item": "scrambledfoxmorefood:cured_tropical_fish",
+        "count": 1
+    }
+}

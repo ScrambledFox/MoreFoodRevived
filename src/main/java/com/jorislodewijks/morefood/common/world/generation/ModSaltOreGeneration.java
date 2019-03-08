@@ -19,7 +19,7 @@ public class ModSaltOreGeneration {
 						Feature.MINABLE, 
 						new MinableConfig(MinableConfig.IS_ROCK, ModBlocks.SALT_ORE.getDefaultState(), 17),
 						Biome.COUNT_RANGE,
-						new CountRangeConfig(8, 0, 0, 128)
+						new CountRangeConfig(5, 0, 0, 128)
 				)
 		));
 		
@@ -29,7 +29,7 @@ public class ModSaltOreGeneration {
 						Feature.MINABLE, 
 						new MinableConfig(MinableConfig.IS_ROCK, ModBlocks.SALT_ORE.getDefaultState(), 17),
 						Biome.COUNT_RANGE,
-						new CountRangeConfig(8, 0, 0, 128)
+						new CountRangeConfig(5, 0, 0, 128)
 				)
 		));
 		
@@ -39,7 +39,7 @@ public class ModSaltOreGeneration {
 						Feature.MINABLE, 
 						new MinableConfig(MinableConfig.IS_ROCK, ModBlocks.SALT_ORE.getDefaultState(), 17),
 						Biome.COUNT_RANGE,
-						new CountRangeConfig(8, 0, 0, 128)
+						new CountRangeConfig(5, 0, 0, 128)
 				)
 		));
 		
@@ -49,7 +49,7 @@ public class ModSaltOreGeneration {
 						Feature.MINABLE, 
 						new MinableConfig(MinableConfig.IS_ROCK, ModBlocks.SALT_ORE.getDefaultState(), 17),
 						Biome.COUNT_RANGE,
-						new CountRangeConfig(8, 0, 0, 128)
+						new CountRangeConfig(5, 0, 0, 128)
 				)
 		));
 		

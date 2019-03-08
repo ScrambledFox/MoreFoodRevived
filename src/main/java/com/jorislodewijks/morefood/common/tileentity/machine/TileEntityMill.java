@@ -45,12 +45,10 @@ public class TileEntityMill extends TileEntity implements ITickable {
 	// Custom name
 	private ITextComponent customName;
 	
-	public TileEntityMill(TileEntityType<?> tileentityTypeIn) {
-		super(tileentityTypeIn);
-	}
-	
 	public TileEntityMill() {
 		super(ModTileEntities.tileEntityMill);
+		
+		this.maxWork = 200;
 	}
 	
 	@Override
@@ -71,10 +69,6 @@ public class TileEntityMill extends TileEntity implements ITickable {
 				}
 			} else {
 				this.currentWork = 0;
-			}
-			
-			if (this.inventory.getStackInSlot(1).isItemEqual(new ItemStack(Items.WHEAT, 1))) {
-				this.inventory.setStackInSlot(0, new ItemStack(Items.APPLE, 1));
 			}
 			
 			BlockMill.setState(this.hasProgress() && this.canMill(), world, pos);
@@ -159,10 +153,6 @@ public class TileEntityMill extends TileEntity implements ITickable {
 		return this.powered;
 	}
 	
-	public ItemStackHandler getInventory() {
-		return inventory;
-	}
-	
 	public double getScaledProgress() {
 		return this.currentWork / (double) this.maxWork;
 	}
@@ -194,6 +184,10 @@ public class TileEntityMill extends TileEntity implements ITickable {
 	
 	public void setCustomName(@Nullable ITextComponent name) {
 		this.customName = name;
+	}
+	
+	public ItemStackHandler getInventory() {
+		return inventory;
 	}
 	
 	public int getField(int id) {

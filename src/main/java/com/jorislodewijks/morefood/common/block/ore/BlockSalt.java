@@ -26,7 +26,7 @@ public class BlockSalt extends Block {
 	
 	@Override
 	public void getDrops(IBlockState state, NonNullList<ItemStack> drops, World world, BlockPos pos, int fortune) {
-		drops.add(new ItemStack(ModItems.SALT, RANDOM.nextInt(4)+2));
+		drops.add(new ItemStack(ModItems.SALT, RANDOM.nextInt(4) + 1));
 	}
 	
 	@Override

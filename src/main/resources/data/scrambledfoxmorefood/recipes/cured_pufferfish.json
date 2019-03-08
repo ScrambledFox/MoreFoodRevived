@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "scrambledfoxmorefood:salt"
+        },
+        {
+            "item": "minecraft:pufferfish"
+        }
+    ],
+    "result": {
+        "item": "scrambledfoxmorefood:cured_pufferfish",
+        "count": 1
+    }
+}

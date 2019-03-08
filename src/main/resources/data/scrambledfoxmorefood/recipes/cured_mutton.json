@@ -1,0 +1,15 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "scrambledfoxmorefood:salt"
+        },
+        {
+            "item": "minecraft:mutton"
+        }
+    ],
+    "result": {
+        "item": "scrambledfoxmorefood:cured_mutton",
+        "count": 1
+    }
+}

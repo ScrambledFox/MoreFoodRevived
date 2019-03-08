@@ -1,7 +1,5 @@
 package com.jorislodewijks.morefood.client.gui;
 
-import java.util.Map.Entry;
-
 import com.jorislodewijks.morefood.common.crafting.MillRecipes;
 import com.jorislodewijks.morefood.common.item.ModItems;
 import com.jorislodewijks.morefood.common.tileentity.machine.TileEntityMill;
@@ -26,7 +24,7 @@ public class ContainerMill extends Container {
 		
 		this.addSlot(new SlotItemHandler(itemHandler, 0, 54, 45));
 		this.addSlot(new SlotItemHandler(itemHandler, 1, 54, 23));
-		this.addSlot(new SlotItemHandler(itemHandler, 0, 114, 35));
+		this.addSlot(new SlotItemHandler(itemHandler, 2, 114, 35));
 		
 		for ( int y = 0; y < 3; y++ ) {
 			for ( int x = 0; x < 9; x++ ) {
@@ -81,7 +79,7 @@ public class ContainerMill extends Container {
 				slot.onSlotChange(stack1, stack);
 			}  else if(index != 1 && index != 0)  {
 				if(canMill(stack1)) {
-					if(!this.mergeItemStack(stack1, 0, 1, false)) {
+					if(!this.mergeItemStack(stack1, 0, 1, true)) {
 						return ItemStack.EMPTY;
 					} 
 				} else if(stack1.getItem().equals(ModItems.MILLSTONE)) {

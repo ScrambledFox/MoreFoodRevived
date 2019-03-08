@@ -30,15 +30,19 @@ public class ModItems {
 	// Cured
 	public static Item CURED_BEEF = new ItemFood(5, 0.8F, true, defaultItemProperties).setRegistryName(location("cured_beef"));
 	public static Item CURED_PORKCHOP = new ItemFood(5, 0.8F, true, defaultItemProperties).setRegistryName(location("cured_porkchop"));
-	public static Item CURED_CHICKEN = new ItemFood(4, 0.8F, true, defaultItemProperties).setRegistryName(location("cured_chicken"));
+	public static Item CURED_CHICKEN = new ItemFood(4, 0.8F, true, defaultItemProperties).setPotionEffect(new PotionEffect(MobEffects.NAUSEA), 0.8f).setPotionEffect(new PotionEffect(MobEffects.HUNGER), 0.5f).setRegistryName(location("cured_chicken"));
 	public static Item CURED_RABBIT = new ItemFood(5, 0.8F, true, defaultItemProperties).setRegistryName(location("cured_rabbit"));
 	public static Item CURED_MUTTON = new ItemFood(4, 0.8F, true, defaultItemProperties).setRegistryName(location("cured_mutton"));
-	public static Item SALTED_POTATO = new ItemFood(7, 1F, false, defaultItemProperties).setRegistryName(location("cured_potato"));
 	
 	public static Item CURED_COD = new ItemFood(4, 0.3F, false, defaultItemProperties).setRegistryName(location("cured_cod"));
 	public static Item CURED_SALMON = new ItemFood(4, 0.3F, false, defaultItemProperties).setRegistryName(location("cured_salmon"));
 	public static Item CURED_TROPICAL_FISH = new ItemFood(2, 0.2F, false, defaultItemProperties).setRegistryName(location("cured_tropical_fish"));
 	public static Item CURED_PUFFERFISH = new ItemFood(1, 0.1F, false, defaultItemProperties).setPotionEffect(new PotionEffect(MobEffects.NAUSEA), 0.8f).setPotionEffect(new PotionEffect(MobEffects.POISON, 100, 0), 0.8f).setRegistryName(location("cured_pufferfish"));
+	
+	// Recipes
+	public static Item SALTED_POTATO = new ItemFood(2, 0.5F, false, defaultItemProperties).setRegistryName(location("salted_potato"));
+	public static Item SALTED_BAKED_POTATO = new ItemFood(7, 1F, false, defaultItemProperties).setRegistryName(location("salted_baked_potato"));
+	
 	
 	// Tools
 	public static Item MILLSTONE = new ItemMillstone(defaultItemProperties).setRegistryName(location("millstone"));
@@ -54,8 +58,9 @@ public class ModItems {
 		
 		event.getRegistry().registerAll(
 				SALT, FLOUR, DOUGH,
-				CURED_BEEF, CURED_PORKCHOP, CURED_CHICKEN, CURED_RABBIT, CURED_MUTTON, SALTED_POTATO,
+				CURED_BEEF, CURED_PORKCHOP, CURED_CHICKEN, CURED_RABBIT, CURED_MUTTON,
 				CURED_COD, CURED_SALMON, CURED_TROPICAL_FISH, CURED_PUFFERFISH,
+				SALTED_POTATO, SALTED_BAKED_POTATO,
 				MILLSTONE
 		);
 		
