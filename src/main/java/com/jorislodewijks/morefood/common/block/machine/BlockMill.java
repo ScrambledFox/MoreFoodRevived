@@ -6,6 +6,8 @@ import com.jorislodewijks.morefood.common.tileentity.machine.TileEntityMill;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,8 +33,8 @@ public class BlockMill extends Block {
 	public static final DirectionProperty FACING = BlockHorizontal.HORIZONTAL_FACING;
 	public static final BooleanProperty ENABLED = BlockStateProperties.ENABLED;
 
-	public BlockMill(Properties properties) {
-		super(properties);
+	public BlockMill( ) {
+		super(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE));
 		
 		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, EnumFacing.NORTH).with(ENABLED, false));
 	}

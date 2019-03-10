@@ -84,17 +84,17 @@ public class MoreFood {
 	public static class RegistryEvents {
 		
 		@SubscribeEvent
-		public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-			ModBlocks.register(event);
-			
-			LOGGER.info("Blocks registered.");
-		}
-		
-		@SubscribeEvent
 		public static void registerItems(final RegistryEvent.Register<Item> event) {
 			ModItems.register(event);
 		
 			LOGGER.info("Items registered.");
+		}
+		
+		@SubscribeEvent
+		public static void registerBlocks(final RegistryEvent.Register<Block> event) {
+			ModBlocks.register(event);
+			
+			LOGGER.info("Blocks registered.");
 		}
 		
 		@SubscribeEvent
